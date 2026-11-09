@@ -1,0 +1,10 @@
+DONE
+-Create drag navigation page
+-Added some test items
+-Added arrows between items (should be generalized to any group of items)
+-Added dummy info boxes
+
+FOR NEXT
+-When page is refreshed info boxes start very small
+-Add more images and data for Indominus era
+-Make info box stay as long as youre holding "alt" key + add button to "pin" info box

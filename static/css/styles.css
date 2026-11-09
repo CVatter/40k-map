@@ -1,0 +1,121 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#canvas {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #333;
+    cursor: grab;
+}
+
+#canvas:active {
+    cursor: grabbing;
+}
+
+#workspace {
+    position: absolute;
+    width: 3000px;
+    height: 3000px;
+    left: 0;
+    top: 0;
+    background-color: #333;
+    background-image: radial-gradient(#b8c0cc 1px, transparent 1px);
+    background-size: 25px 25px;
+}
+
+.content-box {
+    position: absolute;
+    left: 500px;
+    top: 400px;
+    width: 300px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.second-box {
+    left: 1000px;
+    top: 800px;
+}
+
+#workspace {
+    position: absolute;
+    width: 3000px;
+    height: 3000px;
+    left: 0;
+    top: 0;
+
+    transform-origin: 0 0;
+    will-change: transform;
+}
+
+.canvas-image {
+    position: absolute;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.35));
+    transition: filter 0.2s ease;
+    cursor: pointer;
+}
+
+.canvas-image:hover {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 1));
+}
+
+/* Info box */
+.image-info {
+    position: absolute;
+    width: 250px;
+    padding: 15px;
+    background: rgba(25, 25, 25, 0.95);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    z-index: 10;
+    display: none;
+    pointer-events: none;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+    transform-origin: top left;
+}
+
+.image-info h3 {
+    margin-bottom: 8px;
+}
+
+.canvas-image:hover + .image-info {
+    display: block;
+}
+
+#arrow-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.arrow {
+    stroke: #ffffff;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    marker-end: url(#arrowhead);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.65));
+}
