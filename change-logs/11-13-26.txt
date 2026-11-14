@@ -1,0 +1,14 @@
+DONE
+-When page is refreshed info boxes start very small - FIXED
+-Make info box stay as long as youre holding "alt" key + add button to "pin" info box - FIXED
+
+
+FOR NEXT
+-Add details to info box
+    -Character tags
+    -Era tags
+    -Author
+    -etc
+
+DOWN THE LINE
+-Add more images and data for Indominus era
