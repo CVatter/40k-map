@@ -132,6 +132,10 @@ images.forEach(image => {
     // Create image
     const img = document.createElement("img");
 
+    img.addEventListener("click", () => {
+        window.location.href = `/info/${image.id}`;
+    });
+
     img.src = image.src;
     img.className = "canvas-image";
     img.draggable = false;

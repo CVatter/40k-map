@@ -1,0 +1,124 @@
+
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 30px 50px;
+}
+
+/* Home button */
+.home-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #444;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 30px;
+}
+
+.home-button:hover {
+    background: #555;
+}
+
+/* Main container */
+.info-container {
+    width: 100%;
+}
+
+/* Top section */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+/* Basic information */
+.basic-info {
+    flex: 1;
+    padding-top: 10px;
+}
+
+.basic-info h1 {
+    font-size: 42px;
+    margin-bottom: 35px;
+    color: #D4AF37;
+}
+
+.basic-info h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #ddd;
+}
+
+.basic-info p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.basic-info p strong {
+    color: #D4AF37;
+    font-weight: 700;
+    display: inline-block;
+    min-width: 130px;
+}
+
+/* Image */
+.info-image {
+    width: 35%;
+    max-width: 450px;
+    flex-shrink: 0;
+}
+
+.info-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+/* Detailed information */
+.detailed-info {
+    width: 100%;
+    border-top: 1px solid #555;
+    padding-top: 30px;
+}
+
+.detailed-info h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.detailed-info p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Smaller screens */
+@media (max-width: 700px) {
+    body {
+        padding: 20px;
+    }
+
+    .top-section {
+        flex-direction: column-reverse;
+    }
+
+    .info-image {
+        width: 100%;
+        max-width: 350px;
+    }
+}

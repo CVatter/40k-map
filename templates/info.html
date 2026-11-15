@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/info.css') }}">
+</head>
+<body>
+
+    <a href="/" class="home-button">← Home</a>
+
+    <main class="info-container">
+
+        <!-- Top section -->
+        <section class="top-section">
+
+            <!-- Basic information -->
+            <div class="basic-info">
+                <h1>{{ image.title }}</h1>
+
+                <p><strong>Media:</strong> {{ image.category }}</p>
+                <p><strong>Published:</strong> {{ image.date }}</p>
+                <p><strong>Author:</strong> {{ image.author }}</p>
+                <p><strong>Installment:</strong> {{ image.series_num }}</p>
+                <p><strong>Characters:</strong> {{ image.key_chars | join(', ')}}</p>
+                <p><strong>Timeframe:</strong> {{ image.timeframe }}</p>
+                <p><strong>Description:</strong> {{ image.brief_description }}</p>
+
+                <p>
+                    Purchase this {{ image.category }}
+                    <br>
+                    <a href="{{ image.purchase[0].url }}" target="_blank" rel="noopener noreferrer">
+                        Amazon
+                    </a>
+                    <br>
+                    <a href="{{ image.purchase[1].url }}" target="_blank" rel="noopener noreferrer">
+                        Barnes & Noble
+                    </a>
+                    <br>
+                    <a href="{{ image.purchase[2].url }}" target="_blank" rel="noopener noreferrer">
+                        Games Workshop
+                    <br>
+                </p>
+                <p>
+                    Find Your Local Store!
+                    <br>
+                    <a href="https://www.warhammer.com/en-US/store-finder" target="_blank" rel="noopener noreferrer">
+                        40K Store Finder
+
+                </p>
+            </div>
+
+            <!-- Image -->
+            <div class="info-image">
+                <img src="{{ image.src }}" alt="{{ image.title }}">
+            </div>
+
+        </section>
+
+        <!-- Bottom section -->
+        <section class="detailed-info">
+
+            <h2>Description</h2>
+            <p>{{ image.description }}</p>
+
+            <h2>Additional Information</h2>
+            <p>{{ image.additional_info }}</p>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

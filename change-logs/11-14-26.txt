@@ -1,0 +1,13 @@
+DONE
+-Added info page with some detals
+
+
+FOR NEXT
+-Info box while holding "alt" disappears when hovering different image
+-Fix info page links
+-Add info page visual detail
+
+
+DOWN THE LINE
+
+-Add more images and data for Indominus era
