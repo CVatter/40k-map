@@ -1,0 +1,9 @@
+Feature PLANS
+-Fix info page links
+-Convert image_data.py to db
+-Add background image
+
+DONE
+-Fixed page links
+-Added next and previous buttons
+-

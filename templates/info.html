@@ -9,14 +9,34 @@
 </head>
 <body>
 
-    <a href="/" class="home-button">← Home</a>
+    <!-- Nav Bar -->
+    <div class="page-navigation">
+        <a href="/" class="home-button">Back to Map</a>
+
+        <div class="image-navigation">
+            {% if previous_image %}
+                <a href="{{ url_for('info_page', image_id=previous_image) }}" class="home-button">
+                    Previous
+                </a>
+            {% else %}
+                <span class="home-button disabled">Previous</span>
+            {% endif %}
+
+            {% if next_image %}
+                <a href="{{ url_for('info_page', image_id=next_image) }}" class="home-button">
+                    Next
+                </a>
+            {% else %}
+                <span class="home-button disabled">Next</span>
+            {% endif %}
+        </div>
+    </div>
 
     <main class="info-container">
 
-        <!-- Top section -->
         <section class="top-section">
 
-            <!-- Basic information -->
+            <!-- Basic information - Left column -->
             <div class="basic-info">
                 <h1>{{ image.title }}</h1>
 
@@ -24,35 +44,31 @@
                 <p><strong>Published:</strong> {{ image.date }}</p>
                 <p><strong>Author:</strong> {{ image.author }}</p>
                 <p><strong>Installment:</strong> {{ image.series_num }}</p>
-                <p><strong>Characters:</strong> {{ image.key_chars | join(', ')}}</p>
+                <p><strong>Characters:</strong> {{ image.key_chars | join(', ') }}</p>
                 <p><strong>Timeframe:</strong> {{ image.timeframe }}</p>
                 <p><strong>Description:</strong> {{ image.brief_description }}</p>
 
-                <p>
-                    Purchase this {{ image.category }}
-                    <br>
-                    <a href="{{ image.purchase[0].url }}" target="_blank" rel="noopener noreferrer">
-                        Amazon
-                    </a>
-                    <br>
-                    <a href="{{ image.purchase[1].url }}" target="_blank" rel="noopener noreferrer">
-                        Barnes & Noble
-                    </a>
-                    <br>
-                    <a href="{{ image.purchase[2].url }}" target="_blank" rel="noopener noreferrer">
-                        Games Workshop
-                    <br>
-                </p>
-                <p>
-                    Find Your Local Store!
-                    <br>
-                    <a href="https://www.warhammer.com/en-US/store-finder" target="_blank" rel="noopener noreferrer">
-                        40K Store Finder
+                <div class="purchase-section">
+                    <h2>Where to Buy</h2>
 
-                </p>
-            </div>
+                    <div class="purchase-links">
+                        <a href="{{ image.purchase[0] }}" target="_blank" rel="noopener noreferrer">Amazon</a>
+                        <a href="{{ image.purchase[1] }}" target="_blank" rel="noopener noreferrer">Barnes & Noble</a>
+                        <a href="{{ image.purchase[2] }}" target="_blank" rel="noopener noreferrer">Games Workshop</a>
+                    </div>
+                </div>
 
-            <!-- Image -->
+                <div class="purchase-section">
+                    <h2>Find Your Local Store</h2>
+
+                    <div class="purchase-links">
+                        <a href="https://www.warhammer.com/en-US/store-finder" target="_blank" rel="noopener noreferrer">40K Store Finder</a>
+                    </div>
+                </div>
+
+            </div> <!-- This closing tag was missing! -->
+
+            <!-- Image - Right column -->
             <div class="info-image">
                 <img src="{{ image.src }}" alt="{{ image.title }}">
             </div>

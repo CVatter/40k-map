@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById("canvas");
 const workspace = document.getElementById("workspace");
 const arrowLayer = document.getElementById("arrow-layer");

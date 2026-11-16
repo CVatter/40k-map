@@ -14,7 +14,9 @@ IMAGES = {
             "https://www.amazon.com/Dark-Imperium-Warhammer-000-Book-ebook/dp/B094JW6928/ref=sr_1_2?crid=1SNOQPMSFZRHM&dib=eyJ2IjoiMSJ9.qn7UgCv24kaQeJkowXQT0BSw4OJLERKT2hRpJyOSQL2TW25LRdsym9cMsoC-VsKua0SYPXx6Bd2qRYu_M6o-xjevCQoip9e05smohMYjeS1mxlP-NMwXG6QYYj5Yp8z0qLE5nEEOI-7WJf_ZTcfN3XJWou-KhVgaWkIuhUA9faCWoIQNfZMkQE8QXeCCNUOg8-TMglluOzHEYfR9HKNQfaugTPEx19q9kjBpjRecjr0.NB0x02JRpgDhN8RjBsDp57m8BArWua8OD5Q0c9NPRBg&dib_tag=se&keywords=dark+imperium&qid=1794708861&sprefix=dark+imperium%2Caps%2C163&sr=8-2",
             "https://www.barnesandnoble.com/w/dark-imperium-guy-haley/1126512211?ean=9781800261242",
             "https://www.warhammer.com/en-US/shop/dark-imperium-pb-eng-2022"
-            ]
+            ],
+        "next": "dark-imperium-2",
+        "prev": "sink"
     },
 
     "dark-imperium-2": {
@@ -27,7 +29,10 @@ IMAGES = {
         "key_chars": ["placeholder", "placeholder", "placeholder"],
         "timeframe": "placeholder",
         "description": "Description of the first location.",
-        "additional_info": "Additional details about this location."
+        "additional_info": "Additional details about this location.",
+        "purchase": [],
+        "next": "dark-imperium-3",
+        "prev": "dark-imperium-1"
     },
 
     "dark-imperium-3": {
@@ -40,9 +45,30 @@ IMAGES = {
         "key_chars": ["placeholder", "placeholder", "placeholder"],
         "timeframe": "placeholder",
         "description": "Description of the first location.",
-        "additional_info": "Additional details about this location."
+        "additional_info": "Additional details about this location.",
+        "purchase": [],
+        "next": "sink", 
+        "prev": "dark-imperium-2"
     },
+
+    "sink": {
+        "title": "sink",
+        "src": "",
+        "category": "sink",
+        "date": "sink",
+        "author": "sink",
+        "series_num": "sink",
+        "key_chars": [],
+        "timeframe": "sink",
+        "description": "sink",
+        "additional_info": "sink",
+        "purchase": [],
+        "next": "sink",
+        "prev": "sink"
+    }
 }
+
+
 
 # Template
 

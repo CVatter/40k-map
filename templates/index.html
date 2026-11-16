@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draggable Canvas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <script>
+        const imageConnections = {{ connections | tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </head>
 <body>
 
@@ -15,6 +20,5 @@
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
