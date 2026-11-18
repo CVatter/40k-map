@@ -76,7 +76,7 @@ canvas.addEventListener("wheel", (e) => {
 const images = [
     {
         id: "dark-imperium-1",
-        src: "/static/images/dark-imperium-1.jpg",
+        src: "/static/images/dark-imperium/dark-imperium-1.jpg",
         type: ["novel"],
         connections: ["dark-imperium-2"],
         x: 0,
@@ -84,15 +84,15 @@ const images = [
         width: 500,
         height: 800,
         info: {
-            title: "First Location",
-            description: "This is the first location on the map.",
-            category: "Location",
-            date: "November 9, 2026"
+            title: "Dark Imperium",
+            description: "First book in the Dark Imperium trillogy.",
+            published: "June 2017",
+            author: "Guy Haley"
         }
     },
     {
         id: "dark-imperium-2",
-        src: "/static/images/dark-imperium-2.jpg",
+        src: "/static/images/dark-imperium/dark-imperium-2.jpg",
         type: ["novel"],
         connections: ["dark-imperium-3"],
         x: 1000,
@@ -100,15 +100,15 @@ const images = [
         width: 500,
         height: 800,
         info: {
-            title: "2nd Location",
-            description: "This is the first location on the map.",
-            category: "Location",
-            date: "November 9, 2026"
+            title: "Dark Imperium: Plague War",
+            description: "Second book in the Dark Imperium trillogy.",
+            published: "October 2018",
+            author: "Guy Haley"
         }
     },
     {
         id: "dark-imperium-3",
-        src: "/static/images/dark-imperium-3.jpg",
+        src: "/static/images/dark-imperium/dark-imperium-3.jpg",
         type: ["novel", "dark_imperium"],
         connections: [],
         x: 2000,
@@ -116,12 +116,28 @@ const images = [
         width: 500,
         height: 800,
         info: {
-            title: "3rd Location",
-            description: "This is the first location on the map.",
-            category: "Location",
-            date: "November 9, 2026"
+            title: "Dark Imperium: Godblight",
+            description: "Third book in the Dark Imperium trillogy.",
+            published: "May 2021",
+            author: "Guy Haley"
+        }
+    },
+        {
+        id: "crusade-of-vengeance-1",
+        src: "/static/images/crusade-of-vengeance/crusade-of-vengeance-1.jpg",
+        type: ["novel", "crusade-of-vengeance"],
+        x: -1000,
+        y: 500,
+        width: 500,
+        height: 800,
+        info: {
+            title: "Avenging Son",
+            description: "This is the first novel in the Indomitus Era",
+            published: "August 18 2020",
+            author: "Guy Haley"
         }
     }
+
 ];
 
 
@@ -157,8 +173,8 @@ images.forEach(image => {
         <button class="pin-button" type="button" title="Pin info box">📌</button>
         <h3></h3>
         <p class="description"></p>
-        <p class="category"></p>
-        <p class="date"></p>
+        <p class="author"></p>
+        <p class="published"></p>
     `;
 
     workspace.appendChild(info);
@@ -166,8 +182,8 @@ images.forEach(image => {
     // Populate information
     info.querySelector("h3").textContent = image.info.title;
     info.querySelector(".description").textContent = image.info.description;
-    info.querySelector(".category").textContent = `Category: ${image.info.category}`;
-    info.querySelector(".date").textContent = `Date: ${image.info.date}`;
+    info.querySelector(".author").textContent = `Author: ${image.info.author}`;
+    info.querySelector(".published").textContent = `Published: ${image.info.published}`;
 
     // Position information box below image
     info.style.left = image.x + "px";
@@ -239,43 +255,30 @@ document.addEventListener("mouseup", () => {
 });
 
 
-    // Schedule information box to hide
-    function scheduleHide() {   
-        clearTimeout(state.hideTimeout);
+        // Schedule information box to hide
+        function scheduleHide() {
+            clearTimeout(state.hideTimeout);
 
-        state.hideTimeout = setTimeout(() => {
-            if (
-                !altHeld &&
-                !state.overImage &&
-                !state.overInfo &&
-                !info.classList.contains("pinned")
-            ) {
-                info.classList.remove("visible");
+            state.hideTimeout = setTimeout(() => {
+                if (
+                    !altHeld &&
+                    !state.overImage &&
+                    !state.overInfo &&
+                    !state.dragging &&
+                    !info.classList.contains("pinned")
+                ) {
+                    info.classList.remove("visible");
 
-                // Reset information box position
-                info.style.left = originalX + "px";
-                info.style.top = originalY + "px";
+                    // Reset information box position
+                    info.style.left = originalX + "px";
+                    info.style.top = originalY + "px";
 
-                if (activeInfoState === state) {
-                    activeInfoState = null;
+                    if (activeInfoState === state) {
+                        activeInfoState = null;
+                    }
                 }
-            }
-        }, infoHideDelay);
-
-            if (
-        !altHeld &&
-        !state.overImage &&
-        !state.overInfo &&
-        !state.dragging &&
-        !info.classList.contains("pinned")
-        ) {
-        info.classList.remove("visible");
-
-        if (activeInfoState === state) {
-            activeInfoState = null;
-            }
+            }, infoHideDelay);
         }
-    }
 
 
     // Show information box when hovering over image
@@ -422,17 +425,22 @@ images.forEach(current => {
 
 });
 
-
 // Track Alt key
-document.addEventListener("keydown", (e) => {
+window.addEventListener("keydown", (e) => {
     if (e.key === "Alt") {
+        e.preventDefault();
         altHeld = true;
+
+        if (activeInfoState) {
+            clearTimeout(activeInfoState.hideTimeout);
+            activeInfoState.info.classList.add("visible");
+        }
     }
-});
+}, true);
 
 
 // Release Alt key
-document.addEventListener("keyup", (e) => {
+window.addEventListener("keyup", (e) => {
     if (e.key === "Alt") {
         altHeld = false;
 
@@ -446,7 +454,6 @@ document.addEventListener("keyup", (e) => {
             ) {
                 state.info.classList.remove("visible");
 
-                // Reset information box position
                 const image = images.find(img =>
                     img.info.title === state.info.querySelector("h3").textContent
                 );
@@ -460,23 +467,10 @@ document.addEventListener("keyup", (e) => {
             }
         }
     }
-});
+}, true);
 
 
 // Reset Alt behavior if window loses focus
 window.addEventListener("blur", () => {
     altHeld = false;
-
-    if (activeInfoState) {
-        const state = activeInfoState;
-
-        if (
-            !state.overImage &&
-            !state.overInfo &&
-            !state.info.classList.contains("pinned")
-        ) {
-            state.info.classList.remove("visible");
-            activeInfoState = null;
-        }
-    }
 });

@@ -1,30 +1,59 @@
 
 from flask import Flask, render_template
-from image_data import IMAGES
+from database import get_db
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
+    conn = get_db()
+
+    images = conn.execute("SELECT * FROM images").fetchall()
+
     connections = {
-        image_id: {
-            "next": image.get("next"),
-            "prev": image.get("prev")
+        image["id"]: {
+            "next": image["next_id"],
+            "prev": image["prev_id"]
         }
-        for image_id, image in IMAGES.items()
+        for image in images
     }
+
+    conn.close()
 
     return render_template('index.html', connections=connections)
 
 @app.route('/info/<image_id>')
 def info_page(image_id):
-    image = IMAGES.get(image_id)
+    conn = get_db()
+
+    image = conn.execute(
+        "SELECT * FROM images WHERE id = ?",
+        (image_id,)
+    ).fetchone()
 
     if image is None:
+        conn.close()
         return "Image not found", 404
 
-    next_image = image.get("next")
-    previous_image = image.get("prev")
+    image = dict(image)
+
+    characters = conn.execute(
+        "SELECT character_name FROM key_characters WHERE image_id = ?",
+        (image_id,)
+    ).fetchall()
+
+    purchase_links = conn.execute(
+        "SELECT url FROM purchase_links WHERE image_id = ?",
+        (image_id,)
+    ).fetchall()
+
+    conn.close()
+
+    image["key_chars"] = [row["character_name"] for row in characters]
+    image["purchase"] = [row["url"] for row in purchase_links]
+
+    next_image = image.get("next_id")
+    previous_image = image.get("prev_id")
 
     if next_image == "sink":
         next_image = None

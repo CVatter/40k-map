@@ -1,0 +1,13 @@
+GOALS
+-Add background
+-Fix alt buttons
+-Convert image_data.py to db file
+-Add Crusade of Vengence
+
+COMPLETE
+-Background image
+-Fixed alt button
+-Converted image_data.py to db file
+-Added db functionality (add and view)
+-Added 1st book of crusade of vengeance
+-Fixed map info box information
