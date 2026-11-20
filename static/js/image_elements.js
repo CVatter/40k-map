@@ -7,7 +7,8 @@ function generateImageElements() {
         // Create image
         const img = document.createElement("img");
 
-        img.addEventListener("click", () => {
+        img.addEventListener("click", (e) => {
+            e.stopPropagation();
             window.location.href = `/info/${image.id}`;
         });
 

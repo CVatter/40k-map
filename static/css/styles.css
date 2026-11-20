@@ -1,3 +1,4 @@
+
 /* General page styling */
 * {
     margin: 0;
@@ -8,7 +9,6 @@
 html, body {
     width: 100%;
     height: 100%;
-    margin: 0;
     background-color: #333;
 }
 
@@ -36,19 +36,12 @@ body {
 
 /* Workspace */
 #workspace {
-    /* position: absolute; */
-    position: center;
-    background-size: cover;
-    min-height: 100vh;
-
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 3000px;
     height: 3000px;
-    left: 0;
-    top: 0;
-    /* background-image: url("../images/map-background/placeholder.jpg"); */
-    background-image: none;
-    background-color: transparent;
-    background-repeat: no-repeat;
+    background: transparent;
     transform-origin: 0 0;
     will-change: transform;
 }
@@ -56,8 +49,8 @@ body {
 /* Content boxes */
 .content-box {
     position: absolute;
-    left: 500px;
     top: 400px;
+    left: 500px;
     width: 300px;
     padding: 25px;
     background-color: white;
@@ -66,13 +59,14 @@ body {
 }
 
 .second-box {
-    left: 1000px;
     top: 800px;
+    left: 1000px;
 }
 
 /* Images */
 .canvas-image {
     position: absolute;
+    z-index: 2;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -88,22 +82,21 @@ body {
 /* Information boxes */
 .image-info {
     position: absolute;
+    z-index: 1;
+    display: none;
     width: 250px;
     padding: 35px 15px 15px;
     background: rgba(25, 25, 25, 0.95);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 8px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
     font-family: Arial, sans-serif;
     font-size: 14px;
-    z-index: 10;
-    display: none;
     pointer-events: auto;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
     transform-origin: top left;
 }
 
-/* Show information box */
 .image-info.visible,
 .image-info.pinned {
     display: block;
@@ -124,14 +117,14 @@ body {
     margin-bottom: 8px;
 }
 
-/* Drag info box */
+/* Drag handle */
 .info-drag-handle {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     height: 32px;
-    z-index: 1;
     cursor: grab;
 }
 
@@ -139,26 +132,17 @@ body {
     cursor: grabbing;
 }
 
-.pin-button {
-    z-index: 2;
-}
-
-/* Pinned information box */
-.image-info.pinned {
-    border-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-}
-
 /* Pin button */
 .pin-button {
     position: absolute;
     top: 8px;
     right: 8px;
+    z-index: 2;
+    padding: 4px 7px;
     background: transparent;
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
-    padding: 4px 7px;
     cursor: pointer;
     font-size: 14px;
     transition: background 0.2s ease;
@@ -166,6 +150,12 @@ body {
 
 .pin-button:hover {
     background: rgba(255, 255, 255, 0.2);
+}
+
+/* Pinned information box */
+.image-info.pinned {
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 /* SVG arrow layer */
@@ -181,11 +171,11 @@ body {
 
 /* Arrows */
 .arrow {
+    fill: none;
     stroke: #ffffff;
     stroke-width: 20;
     stroke-linecap: round;
     stroke-linejoin: round;
-    fill: none;
     marker-end: url(#arrowhead);
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.65));
 }
