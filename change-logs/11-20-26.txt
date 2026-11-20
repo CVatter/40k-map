@@ -1,0 +1,3 @@
+-Reorganized map
+-Finished adding Crusade of Vengeance novels
+-Broke up script.js file into image_data.js and image_elements.js

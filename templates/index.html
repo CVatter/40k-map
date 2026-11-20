@@ -10,7 +10,9 @@
     <script>
         const imageConnections = {{ connections | tojson }};
     </script>
+    <script src="{{ url_for('static', filename='js/image_data.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/image_elements.js') }}"></script>    <!-- THIS MUST COME AFTER script.js is loaded-->
 </head>
 <body>
 
