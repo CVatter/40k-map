@@ -100,7 +100,7 @@ const images = [
         id: "the-carrion-throne",
         src: "/static/images/indomitus-era/vaults-of-terra/the-carrion-throne.jpg",
         type: ["novel", "vaults-of-terra"],
-        connections: [""],
+        connections: ["the-fall-of-cadia"],
         x: 0,
         y: 2500,
         width: 500,
@@ -110,6 +110,22 @@ const images = [
             description: "This is the first novel of the Vaults of Terra trillogy",
             published: "May 2017",
             author: "Chris Wraight"
+        }
+    },
+    {
+        id: "the-fall-of-cadia",
+        src: "/static/images/indomitus-era/misc/fall-of-cadia.jpg",
+        type: ["novel", "misc"],
+        connections: [""],
+        x: 1000,
+        y: 2500,
+        width: 500,
+        height: 800,
+        info: {
+            title: "The Fall of Cadia",
+            description: "This is the second book in the Indomitus Era",
+            published: "August 2023",
+            author: "Robert Rath"
         }
     },
 
