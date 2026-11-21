@@ -1,2 +1,7 @@
-GOAL
--Upload images for ALL main novels in the indomitus era
+DONE
+-Added more novels to max
+
+NEXT
+-make sink page for books without purchase links
+-Add the rest of the indomitus era novels
+-Reorganize map to be snaking down the page
