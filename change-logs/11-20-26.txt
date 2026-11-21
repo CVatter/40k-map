@@ -3,6 +3,3 @@
 -Broke up script.js file into image_data.js and image_elements.js
 
 -Fixed zoomed out info page clicking
-
-NEXT
--Make info boxes not popup overlapping

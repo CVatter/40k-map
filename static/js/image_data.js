@@ -2,7 +2,7 @@
 const images = [
     {
         id: "dark-imperium-1",
-        src: "/static/images/dark-imperium/dark-imperium-1.jpg",
+        src: "/static/images/indomitus-era/dark-imperium/dark-imperium-1.jpg",
         type: ["novel"],
         connections: ["dark-imperium-2"],
         x: 10000,
@@ -18,7 +18,7 @@ const images = [
     },
     {
         id: "dark-imperium-2",
-        src: "/static/images/dark-imperium/dark-imperium-2.jpg",
+        src: "/static/images/indomitus-era/dark-imperium/dark-imperium-2.jpg",
         type: ["novel"],
         connections: ["dark-imperium-3"],
         x: 11000,
@@ -34,7 +34,7 @@ const images = [
     },
     {
         id: "dark-imperium-3",
-        src: "/static/images/dark-imperium/dark-imperium-3.jpg",
+        src: "/static/images/indomitus-era/dark-imperium/dark-imperium-3.jpg",
         type: ["novel", "dark_imperium"],
         connections: [],
         x: 12000,
@@ -50,10 +50,10 @@ const images = [
     },
     {
         id: "crusade-of-vengeance-1",
-        src: "/static/images/crusade-of-vengeance/crusade-of-vengeance-1.jpg",
+        src: "/static/images/indomitus-era/crusade-of-vengeance/crusade-of-vengeance-1.jpg",
         type: ["novel", "crusade-of-vengeance"],
         connections: ["crusade-of-vengeance-2"],
-        x: 1000,
+        x: 6000,
         y: 2500,
         width: 500,
         height: 800,
@@ -66,10 +66,10 @@ const images = [
     },
     {
         id: "crusade-of-vengeance-2",
-        src: "/static/images/crusade-of-vengeance/crusade-of-vengeance-2.jpg",
+        src: "/static/images/indomitus-era/crusade-of-vengeance/crusade-of-vengeance-2.jpg",
         type: ["novel", "crusade-of-vengeance"],
         connections: ["crusade-of-vengeance-3"],
-        x: 2000,
+        x: 7000,
         y: 2500,
         width: 500,
         height: 800,
@@ -82,10 +82,10 @@ const images = [
     },
     {
         id: "crusade-of-vengeance-3",
-        src: "/static/images/crusade-of-vengeance/crusade-of-vengeance-3.jpg",
+        src: "/static/images/indomitus-era/crusade-of-vengeance/crusade-of-vengeance-3.jpg",
         type: ["novel", "crusade-of-vengeance"],
         connections: [""],
-        x: 3000,
+        x: 8000,
         y: 2500,
         width: 500,
         height: 800,
@@ -94,6 +94,22 @@ const images = [
             description: "This is the third novel in the Indomitus Era",
             published: "November 2021",
             author: "Gav Thorpe"
+        }
+    },
+    {
+        id: "the-carrion-throne",
+        src: "/static/images/indomitus-era/vaults-of-terra/the-carrion-throne.jpg",
+        type: ["novel", "vaults-of-terra"],
+        connections: [""],
+        x: 0,
+        y: 2500,
+        width: 500,
+        height: 800,
+        info: {
+            title: "Vaults of Terra: The Carrion Throne",
+            description: "This is the first novel of the Vaults of Terra trillogy",
+            published: "May 2017",
+            author: "Chris Wraight"
         }
     },
 
