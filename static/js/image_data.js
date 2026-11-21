@@ -52,8 +52,8 @@ const images = [
         id: "crusade-of-vengeance-1",
         src: "/static/images/indomitus-era/crusade-of-vengeance/crusade-of-vengeance-1.jpg",
         type: ["novel", "crusade-of-vengeance"],
-        connections: ["crusade-of-vengeance-2"],
-        x: 6000,
+        connections: [""],
+        x: 5000,
         y: 2500,
         width: 500,
         height: 800,
@@ -68,7 +68,7 @@ const images = [
         id: "crusade-of-vengeance-2",
         src: "/static/images/indomitus-era/crusade-of-vengeance/crusade-of-vengeance-2.jpg",
         type: ["novel", "crusade-of-vengeance"],
-        connections: ["crusade-of-vengeance-3"],
+        connections: [""],
         x: 7000,
         y: 2500,
         width: 500,
@@ -113,10 +113,42 @@ const images = [
         }
     },
     {
+        id: "hollowed-mountain",
+        src: "/static/images/indomitus-era/vaults-of-terra/hollowed-mountain.jpg",
+        type: ["novel", "vaults-of-terra"],
+        connections: ["emperors-legion"],
+        x: 2000,
+        y: 2500,
+        width: 500,
+        height: 800,
+        info: {
+            title: "Vaults of Terra: The Hollowed Mountain",
+            description: "This is the second novel of the Vaults of Terra trillogy",
+            published: "July 2019",
+            author: "Chris Wraight"
+        }
+    },
+    {
+        id: "emperors-legion",
+        src: "/static/images/indomitus-era/watchers-of-the-throne/emperors-legion.jpg",
+        type: ["novel", "Watchers of the Throne"],
+        connections: ["lords-of-silence"],
+        x: 3000,
+        y: 2500,
+        width: 500,
+        height: 800,
+        info: {
+            title: "Watchers of the Throne: The Emperor's Legion",
+            description: "This is the first novel of the Watchers of the Throne trillogy and fourth novel in the Indomitus Era",
+            published: "September 2017",
+            author: "Chris Wraight"
+        }
+    },
+    {
         id: "the-fall-of-cadia",
         src: "/static/images/indomitus-era/misc/fall-of-cadia.jpg",
         type: ["novel", "misc"],
-        connections: [""],
+        connections: ["hollowed-mountain"],
         x: 1000,
         y: 2500,
         width: 500,
@@ -126,6 +158,22 @@ const images = [
             description: "This is the second book in the Indomitus Era",
             published: "August 2023",
             author: "Robert Rath"
+        }
+    },
+    {
+        id: "lords-of-silence",
+        src: "/static/images/indomitus-era/misc/lords-of-silence.jpg",
+        type: ["novel", "misc"],
+        connections: ["crusade-of-vengeance-1"],
+        x: 4000,
+        y: 2500,
+        width: 500,
+        height: 800,
+        info: {
+            title: "Lords of Silence",
+            description: "This is the fifth book in the Indomitus Era",
+            published: "August 2018",
+            author: "Chris Wraight"
         }
     },
 
