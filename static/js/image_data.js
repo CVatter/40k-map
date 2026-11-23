@@ -95,7 +95,14 @@ const imageLayout = [
         width: 500,
         height: 800
     },
-
+    {
+        id: "regents-shadow",
+        connections: ["heretic-saint"],
+        x: 9500,
+        y: 1500,
+        width: 500,
+        height: 800
+    },
 
     // ==========================================
     // MISC
