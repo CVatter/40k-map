@@ -5,22 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draggable Canvas</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
-    <script>
-        const imageConnections = {{ connections | tojson }};
-    </script>
-    <script src="{{ url_for('static', filename='js/image_data.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/image_elements.js') }}"></script>    <!-- THIS MUST COME AFTER script.js is loaded-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
 
     <div id="canvas">
-        <div id="workspace">    <!-- images will be added through js -->
+        <div id="workspace">
+            <!-- Images will be added through JavaScript -->
             <svg id="arrow-layer"></svg>
         </div>
     </div>
+
+    <!-- Database Information -->
+    <script>
+        const databaseImages = {{ database_images | tojson }};
+        const imageConnections = {{ connections | tojson }};
+    </script>
+
+    <!-- JavaScript Files -->
+    <script src="{{ url_for('static', filename='js/image_data.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/image_elements.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>

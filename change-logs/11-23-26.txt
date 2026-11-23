@@ -8,3 +8,4 @@ DONE
 
 
 NEXT
+-Rework the image_data.js file to pull information directly from db instead of manual entry in file

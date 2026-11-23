@@ -8,19 +8,30 @@ app = Flask(__name__)
 def home():
     conn = get_db()
 
-    images = conn.execute("SELECT * FROM images").fetchall()
+    rows = conn.execute("""
+        SELECT id, src, category, title, brief_description, date, author
+        FROM images
+    """).fetchall()
+
+    database_images = [dict(row) for row in rows]
 
     connections = {
         image["id"]: {
             "next": image["next_id"],
             "prev": image["prev_id"]
         }
-        for image in images
+        for image in conn.execute(
+            "SELECT id, next_id, prev_id FROM images"
+        ).fetchall()
     }
 
     conn.close()
 
-    return render_template('index.html', connections=connections)
+    return render_template(
+        'index.html',
+        database_images=database_images,
+        connections=connections
+    )
 
 @app.route('/info/<image_id>')
 def info_page(image_id):
