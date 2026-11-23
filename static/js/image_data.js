@@ -1,5 +1,11 @@
 // Image data
 const images = [
+
+
+
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    // DARK IMPERIUM
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     {
         id: "dark-imperium-1",
         src: "/static/images/indomitus-era/dark-imperium/dark-imperium-1.jpg",
@@ -48,13 +54,19 @@ const images = [
             author: "Guy Haley"
         }
     },
+
+
+
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    // CRUSADE OF VENGEANCE
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     {
         id: "crusade-of-vengeance-1",
         src: "/static/images/indomitus-era/crusade-of-vengeance/crusade-of-vengeance-1.jpg",
         type: ["novel", "crusade-of-vengeance"],
-        connections: [""],
-        x: 5000,
-        y: 2500,
+        connections: ["last-whiteshield"],
+        x: 5500,
+        y: 1500,
         width: 500,
         height: 800,
         info: {
@@ -96,13 +108,19 @@ const images = [
             author: "Gav Thorpe"
         }
     },
+
+
+
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    // VAULTS OF TERRA
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     {
         id: "the-carrion-throne",
         src: "/static/images/indomitus-era/vaults-of-terra/the-carrion-throne.jpg",
         type: ["novel", "vaults-of-terra"],
         connections: ["the-fall-of-cadia"],
-        x: 0,
-        y: 2500,
+        x: 500,
+        y: 1500,
         width: 500,
         height: 800,
         info: {
@@ -117,8 +135,8 @@ const images = [
         src: "/static/images/indomitus-era/vaults-of-terra/hollowed-mountain.jpg",
         type: ["novel", "vaults-of-terra"],
         connections: ["emperors-legion"],
-        x: 2000,
-        y: 2500,
+        x: 2500,
+        y: 1500,
         width: 500,
         height: 800,
         info: {
@@ -128,13 +146,17 @@ const images = [
             author: "Chris Wraight"
         }
     },
+
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    // WATCHERS OF THE THRONE
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     {
         id: "emperors-legion",
         src: "/static/images/indomitus-era/watchers-of-the-throne/emperors-legion.jpg",
         type: ["novel", "Watchers of the Throne"],
         connections: ["lords-of-silence"],
-        x: 3000,
-        y: 2500,
+        x: 3500,
+        y: 1500,
         width: 500,
         height: 800,
         info: {
@@ -144,13 +166,19 @@ const images = [
             author: "Chris Wraight"
         }
     },
+
+
+
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    // MISC
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     {
         id: "the-fall-of-cadia",
         src: "/static/images/indomitus-era/misc/fall-of-cadia.jpg",
         type: ["novel", "misc"],
         connections: ["hollowed-mountain"],
-        x: 1000,
-        y: 2500,
+        x: 1500,
+        y: 1500,
         width: 500,
         height: 800,
         info: {
@@ -165,8 +193,8 @@ const images = [
         src: "/static/images/indomitus-era/misc/lords-of-silence.jpg",
         type: ["novel", "misc"],
         connections: ["crusade-of-vengeance-1"],
-        x: 4000,
-        y: 2500,
+        x: 4500,
+        y: 1500,
         width: 500,
         height: 800,
         info: {
@@ -174,6 +202,44 @@ const images = [
             description: "This is the fifth book in the Indomitus Era",
             published: "August 2018",
             author: "Chris Wraight"
+        }
+    },
+    {
+        id: "knights-of-macragge",
+        src: "/static/images/indomitus-era/misc/knights-of-macragge.jpg",
+        type: ["novel", "misc"],
+        connections: ["void-king"],
+        x: 7500,
+        y: 1500,
+        width: 500,
+        height: 800,
+        info: {
+            title: "Knights of Macragge",
+            description: "This is the eigth book in the Indomitus Era",
+            published: "August 2019",
+            author: "Nick Kyme"
+        }
+    },
+
+
+
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    // CHARACTERS
+    // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    {
+        id: "last-whiteshield",
+        src: "/static/images/indomitus-era/char/last-whiteshield.jpg",
+        type: ["novel", "char"],
+        connections: ["knights-of-macragge"],
+        x: 6500,
+        y: 1500,
+        width: 500,
+        height: 800,
+        info: {
+            title: "Minka Lesk: The Last Whiteshield",
+            description: "This is the seventh book in the Indomitus Era and the first character novel",
+            published: "June 2023",
+            author: "Justin D. Hill"
         }
     },
 

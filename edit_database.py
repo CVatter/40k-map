@@ -111,7 +111,8 @@ def main():
         print("2. View image details")
         print("3. Update image")
         print("4. Delete image")
-        print("5. Exit")
+        print("5. Edit purchase links")
+        print("6. Exit")
 
         choice = input("\nChoose an option: ")
 
@@ -124,11 +125,52 @@ def main():
         elif choice == "4":
             delete_image(conn)
         elif choice == "5":
+            edit_purchase_links()
+        elif choice == "6":
+            print("Exiting...")
             break
         else:
             print("Invalid option.")
-
     conn.close()
+
+def edit_purchase_links():
+    conn = get_db()
+    cursor = conn.cursor()
+
+    image_id = input("Enter image ID: ")
+
+    image = cursor.execute(
+        "SELECT title FROM images WHERE id = ?",
+        (image_id,)
+    ).fetchone()
+
+    if not image:
+        print("Image not found.")
+        conn.close()
+        return
+
+    print(f"\nEditing purchase links for: {image['title']}")
+
+    cursor.execute(
+        "DELETE FROM purchase_links WHERE image_id = ?",
+        (image_id,)
+    )
+
+    stores = ["Amazon", "Barnes & Noble", "Games Workshop"]
+
+    for store in stores:
+        url = input(f"{store} URL (leave blank if unavailable): ").strip()
+
+        if url:
+            cursor.execute(
+                "INSERT INTO purchase_links (image_id, url) VALUES (?, ?)",
+                (image_id, url)
+            )
+
+    conn.commit()
+    conn.close()
+
+    print("Purchase links updated successfully.")
 
 if __name__ == "__main__":
     main()

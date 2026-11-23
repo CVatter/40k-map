@@ -51,11 +51,25 @@
                 <div class="purchase-section">
                     <h2>Where to Buy</h2>
 
-                    <div class="purchase-links">
-                        <a href="{{ image.purchase[0] }}" target="_blank" rel="noopener noreferrer">Amazon</a>
-                        <a href="{{ image.purchase[1] }}" target="_blank" rel="noopener noreferrer">Barnes & Noble</a>
-                        <a href="{{ image.purchase[2] }}" target="_blank" rel="noopener noreferrer">Games Workshop</a>
-                    </div>
+                    {% if image.purchase and image.purchase|select|list %}
+                        <div class="purchase-links">
+                            {% if image.purchase[0] %}
+                                <a href="{{ image.purchase[0] }}" target="_blank" rel="noopener noreferrer">Amazon</a>
+                            {% endif %}
+
+                            {% if image.purchase[1] %}
+                                <a href="{{ image.purchase[1] }}" target="_blank" rel="noopener noreferrer">Barnes & Noble</a>
+                            {% endif %}
+
+                            {% if image.purchase[2] %}
+                                <a href="{{ image.purchase[2] }}" target="_blank" rel="noopener noreferrer">Games Workshop</a>
+                            {% endif %}
+                        </div>
+                    {% else %}
+                        <div class="purchase-links">
+                            <a href="{{ url_for('sink') }}">Unavailable for Purchase</a>
+                        </div>
+                    {% endif %}
                 </div>
 
                 <div class="purchase-section">
