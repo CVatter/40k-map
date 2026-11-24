@@ -39,23 +39,23 @@ const imageLayout = [
         id: "crusade-of-vengeance-1",
         connections: ["last-whiteshield"],
         x: 5500,
-        y: 1500,
+        y: 500,
         width: 500,
         height: 800
     },
     {
         id: "crusade-of-vengeance-2",
-        connections: [],
-        x: 9500,
-        y: 1500,
+        connections: ["regents-shadow"],
+        x: 4500,
+        y: 1650,
         width: 500,
         height: 800
     },
     {
         id: "crusade-of-vengeance-3",
-        connections: [],
-        x: 8000,
-        y: 2500,
+        connections: ["dark-city"],
+        x: 1500,
+        y: 1650,
         width: 500,
         height: 800
     },
@@ -69,7 +69,7 @@ const imageLayout = [
         id: "the-carrion-throne",
         connections: ["fall-of-cadia"],
         x: 500,
-        y: 1500,
+        y: 500,
         width: 500,
         height: 800
     },
@@ -77,7 +77,15 @@ const imageLayout = [
         id: "hollowed-mountain",
         connections: ["emperors-legion"],
         x: 2500,
-        y: 1500,
+        y: 500,
+        width: 500,
+        height: 800
+    },
+    {
+        id: "dark-city",
+        connections: ["throne-of-light"],
+        x: 500,
+        y: 1650,
         width: 500,
         height: 800
     },
@@ -91,15 +99,15 @@ const imageLayout = [
         id: "emperors-legion",
         connections: ["lords-of-silence"],
         x: 3500,
-        y: 1500,
+        y: 500,
         width: 500,
         height: 800
     },
     {
         id: "regents-shadow",
         connections: ["heretic-saint"],
-        x: 9500,
-        y: 1500,
+        x: 3500,
+        y: 1650,
         width: 500,
         height: 800
     },
@@ -112,7 +120,7 @@ const imageLayout = [
         id: "fall-of-cadia",
         connections: ["hollowed-mountain"],
         x: 1500,
-        y: 1500,
+        y: 500,
         width: 500,
         height: 800
     },
@@ -120,23 +128,23 @@ const imageLayout = [
         id: "lords-of-silence",
         connections: ["crusade-of-vengeance-1"],
         x: 4500,
-        y: 1500,
+        y: 500,
         width: 500,
         height: 800
     },
     {
         id: "knights-of-macragge",
         connections: ["void-king"],
-        x: 7500,
-        y: 1500,
+        x: 6500,
+        y: 1650,
         width: 500,
         height: 800
     },
     {
         id: "void-king",
         connections: ["crusade-of-vengeance-2"],
-        x: 8500,
-        y: 1500,
+        x: 5500,
+        y: 1650,
         width: 500,
         height: 800
     },
@@ -150,7 +158,15 @@ const imageLayout = [
         id: "last-whiteshield",
         connections: ["knights-of-macragge"],
         x: 6500,
-        y: 1500,
+        y: 500,
+        width: 500,
+        height: 800
+    },
+    {
+        id: "heretic-saint",
+        connections: ["crusade-of-vengeance-3"],
+        x: 2500,
+        y: 1650,
         width: 500,
         height: 800
     }
